@@ -6,9 +6,8 @@ queue_rules:
 pull_request_rules:
   - name: automatic merge with merge queue when Buildkite CI passes
     conditions:
-      - and:
-        - or:
-          - check-success=buildkite/mq-mergify
+      - check-success=buildkite/mq-mergify
+      - check-success=test
       # Additional conditions can be added, for example:
       # - "#approved-reviews-by>=1"  # at least one approved review
       # - "label=ready-to-merge"    # only if a specific label is present
