@@ -1,0 +1,24 @@
+agents:
+  queue: default
+
+retry: &retry
+  automatic:
+  - exit_status: -1  # Agent was lost
+    limit: 2
+  - exit_status: 255 # Forced agent shutdown
+    limit: 2
+
+
+steps:
+  - block: "Request Release"
+    if: build.branch =~ /^gh-readonly-queue\//
+    blocked_state: "running"
+    fields:
+      - text: "Pass or fail?"
+        key: "pof"
+  - label: Wait and fail
+    command: "./ci.sh"
+
+
+
+
