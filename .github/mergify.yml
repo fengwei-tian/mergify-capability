@@ -2,8 +2,6 @@ queue_rules:
   - name: default
     merge_conditions:
       - check-success=buildkite/mq-mergify
-    conditions:
-      - base=main  # assuming the default branch is named "main"
 
 pull_request_rules:
   - name: automatic merge with merge queue when Buildkite CI passes
