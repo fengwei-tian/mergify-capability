@@ -1,0 +1,23 @@
+# The name of the status that the test runner (in this case, Buildkite) will post.
+status = [
+    "buildkite/mq-mergify"
+]
+
+# The number of seconds to wait without new commits before merging a batch.
+timeout_sec = 1800  # 30 minutes
+
+# The GitHub users who have permission to run bors commands.
+reviewers = ["username1", "username2"]
+
+# Gatekeeper settings: allow reviewers to approve their own PRs.
+# Change to 'true' if you want to prevent reviewers from approving their own PRs.
+self_approve = false
+
+# Policy for updating the master branch from staging.
+# 'squash' will squash merge PRs into a single commit.
+# 'merge' will create merge commits.
+# Choose the one that suits your workflow.
+update_method = "squash" 
+
+# Automatically delete branches after they're merged.
+delete_merged_branches = true
