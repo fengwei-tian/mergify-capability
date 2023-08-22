@@ -1,17 +1,6 @@
 queue_rules:
   - name: default
+    queue_conditions:
+      - check-success=buildkite/mq-mergify
     merge_conditions:
       - check-success=buildkite/mq-mergify
-
-pull_request_rules:
-  - name: automatic merge with merge queue when Buildkite CI passes
-    conditions:
-      - "base=main"
-      - "check-success=buildkite/mq-mergify"
-      # Additional conditions can be added, for example:
-      # - "#approved-reviews-by>=1"  # at least one approved review
-      # - "label=ready-to-merge"    # only if a specific label is present
-    actions:
-      queue:
-        name: default
-        method: squash  # can be 'rebase', 'merge', or 'squash'
