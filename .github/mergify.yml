@@ -1,4 +1,6 @@
 queue_rules:
   - name: default
+    queue_conditions:
+      - check-success=buildkite/mq-mergify
     merge_conditions:
       - check-success=buildkite/mq-mergify
