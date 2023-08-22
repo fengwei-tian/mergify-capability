@@ -2,7 +2,7 @@
 
 # if current branch does not start with gh - then return 0
 if [[ ! $BUILDKITE_BRANCH =~ ^gh.* ]]; then
-  sleep 120
+  sleep 45
   echo "Not a gh-pages branch, skipping deploy"
   exit 0
 fi
