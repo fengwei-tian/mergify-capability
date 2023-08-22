@@ -18,7 +18,3 @@ steps:
         key: "pof"
   - label: Wait and fail
     command: "./ci.sh"
-
-
-
-
