@@ -3,4 +3,4 @@ queue_rules:
     queue_conditions:
       - check-success=buildkite/mq-mergify
     merge_conditions:
-      - check-success=buildkite/mq-mergify
+      - check-success=buildkite/mq-mergify-1
