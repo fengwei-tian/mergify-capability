@@ -4,4 +4,4 @@ queue_rules:
       - check-success=buildkite/mq-mergify
     # Concurrency
     speculative_checks: 3
-    batch_size: 3
+    batch_size: 10
