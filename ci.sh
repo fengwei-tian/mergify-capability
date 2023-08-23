@@ -4,7 +4,7 @@
 if [[ ! $BUILDKITE_BRANCH =~ ^gh.* ]]; then
   sleep 45
   echo "Not a gh-pages branch, skipping deploy"
-  exit 0
+  exit 1
 fi
 
 val=$(buildkite-agent meta-data get "pof") || true
@@ -14,4 +14,4 @@ if [[ $val == "1" ]]; then
   exit 1
 fi
 
-exit 0
+exit 1
