@@ -2,3 +2,6 @@ queue_rules:
   - name: default
     merge_conditions:
       - check-success=buildkite/mq-mergify
+    # Concurrency
+    speculative_checks: 3
+    batch_size: 3
